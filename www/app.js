@@ -23,9 +23,19 @@
 
   // ---------- mapa base ----------
   var mapa = L.map("mapa", { zoomControl: true }).setView([40.42, -3.68], 11);
-  L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
-    attribution: "© OpenStreetMap contributors © CARTO", maxZoom: 19
-  }).addTo(mapa);
+  // Capas base OpenStreetMap (sin API key): tile.openstreetmap.org + alternativa OpenTopoMap
+  var capasBase = {
+    "OSM estándar": L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 19
+    }),
+    "OpenTopoMap": L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png", {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, SRTM | &copy; <a href="https://opentopomap.org">OpenTopoMap</a>',
+      maxZoom: 17
+    })
+  };
+  capasBase["OSM estándar"].addTo(mapa);
+  L.control.layers(capasBase, null, { position: "topright" }).addTo(mapa);
 
   // ---------- utilidades temporales ----------
   function abiertaEn(c, y) { return c.apertura <= y && (c.cierre == null || c.cierre > y); }
