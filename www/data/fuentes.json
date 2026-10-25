@@ -1,0 +1,18 @@
+{
+  "generado": "2026-10-26",
+  "distritos": {
+    "descripcion": "Distritos municipales de Madrid (21)",
+    "fuente": "Ejemplo geojson Ayuntamiento de Madrid (data.madrid.es) vía espejo GitHub pedrojavierpablos-del/Distritosmadrid",
+    "licencia": "CC-BY 4.0 (Datos Abiertos Madrid)"
+  },
+  "metro": {
+    "descripcion": "Estaciones de Metro de Madrid",
+    "fuente": "OpenStreetMap via Overpass API",
+    "licencia": "ODbL 1.0"
+  },
+  "comercios": {
+    "descripcion": "Censo de establecimientos comerciales (incluye fruterías)",
+    "fuente": "data.madrid.es — Registro de Establecimientos Comerciales (descarga manual requerida: ver README)",
+    "licencia": "CC-BY 4.0 (Datos Abiertos Madrid)"
+  }
+}
